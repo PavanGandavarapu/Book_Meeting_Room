@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BookMeetingRoom.Models.MeetingTypeModel>
+@{
+  ViewBag.Title = "MeetingType";
+}
+
+@Html.Raw(ViewBag.Alert)
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">view all meeting types</h4>
+  @Html.ActionLink("+ Add Type", "AddMeetingType", new { }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+
+<div class="card">
+  <div class="card-body">
+    <table class="table table-bordered" id="meetingType">
+      <thead>
+        <tr>
+          <th>Meeting Type</th>
+          <th width="20%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var data in Model)
+        {
+          <tr>
+            <td>@data.Purpose</td>
+            <td>
+              @Html.ActionLink("Edit", "EditMeetingType", new { meetingTypeId = data.Id }, new { @class = "btn btn-sm btn-outline-primary" })
+              @Html.ActionLink("Delete", "DeleteMeetingType", new { meetingTypeId = data.Id }, new { @class = "btn btn-sm btn-outline-danger", onclick = "return confirm('Are you sure you wish to delete this meeting type?');" })
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+@section scripts{
+  <script>
+    $(document).ready(function () {
+      $('#meetingType').dataTable({
+        "pageLength": 10
+      });
+    });
+  </script>
+}
+

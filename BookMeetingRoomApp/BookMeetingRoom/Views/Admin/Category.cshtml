@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BookMeetingRoom.Models.ServiceCategoryModel>
+@{
+  ViewBag.Title = "View Service Category";
+  int sno = 0;
+}
+
+@Html.Raw(ViewBag.Alert)
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">view all categories</h4>
+  @Html.ActionLink("+ Add Category", "AddCategory", new { }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+
+<div class="card">
+  <div class="card-body">
+    <table class="table table-bordered" id="meetingType">
+      <thead>
+        <tr>
+          <th width="10%">SNo</th>
+          <th width="40%">Category</th>
+          <th width="30%">Items</th>
+          <th width="20%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var data in Model)
+        {
+          sno = ++sno;
+          <tr>
+            <td>@sno</td>
+            <td>@data.CategoryName</td>
+            <td>@Html.ActionLink("View items in this category", "CategoryItems", new { categoryId = data.Id }, new { @class = "btn btn-sm btn-outline-primary" })</td>
+            <td>
+              @Html.ActionLink("Edit", "EditCategory", new { categoryId = data.Id }, new { @class = "btn btn-sm btn-outline-primary" })
+              @Html.ActionLink("Delete", "DeleteCategory", new { categoryId = data.Id }, new { @class = "btn btn-sm btn-outline-danger", onclick = "return confirm('Are you sure you wish to delete this category ?');" })
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+@section scripts{
+  <script>
+    $(document).ready(function () {
+      $('#meetingType').dataTable({
+        "pageLength": 10
+      });
+    });
+  </script>
+}
+

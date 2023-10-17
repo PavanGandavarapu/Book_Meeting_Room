@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "634e4cdc7867763de8250b45"
+  },
+  "CategoryName": "Breakfast",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "CategoryName": "Lunch",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e4cf07867763de8250b47"
+  },
+  "CategoryName": "Tea & Snacks",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e4cf87867763de8250b48"
+  },
+  "CategoryName": "Dinner",
+  "Status": true
+}]

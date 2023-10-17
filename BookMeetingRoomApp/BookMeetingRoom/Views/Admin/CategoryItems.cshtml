@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BookMeetingRoom.Models.ServiceItemModel>
+@{
+  ViewBag.Title = "Items";
+  int sno = 0;
+}
+
+@Html.Raw(ViewBag.Alert)
+
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">view all items in ( @ViewBag.CategoryName )</h4>
+  <div>
+    @Html.ActionLink("+ Add Item", "AddItem", new { categoryId = ViewBag.CategoryId }, new { @class = "btn btn-theme" })
+    @Html.ActionLink("Back to category", "Category", new { }, new { @class = "btn btn-outline-secondary" })
+  </div>
+</div>
+<div class="line"></div>
+
+<div class="card">
+  <div class="card-body">
+    <table class="table table-bordered" id="itemsTable">
+      <thead>
+        <tr>
+          <th width="10%">S.No</th>
+          <th width="50%">Item Name</th>
+          <th>Price</th>
+          <th width="30%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var data in Model)
+        {
+          sno = ++sno;
+          <tr>
+            <td>@sno</td>
+            <td>@data.ItemName</td>
+            <td>&dollar;@String.Format("{0:0.00}", data.Price)</td>
+            <td>
+              @Html.ActionLink("Edit", "EditItem", new { itemId = data.ItemId }, new { @class = "btn btn-sm btn-outline-primary" })
+              @Html.ActionLink("Delete", "DeleteItem", new { itemId = data.ItemId }, new { @class = "btn btn-sm btn-outline-danger", onclick = "return confirm('Are you sure you wish to delete this item ?');" })
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+@section scripts{
+  <script>
+    $(document).ready(function () {
+      $('#itemsTable').dataTable({
+        "pageLength": 25
+      });
+    });
+  </script>
+}
+

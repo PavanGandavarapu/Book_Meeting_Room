@@ -1,0 +1,95 @@
+﻿@model BookMeetingRoom.Models.ReservationModel
+@{
+  ViewBag.Title = "Details";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">Booking details</h4>
+  @Html.ActionLink("Back to booking list","index",new { },new { @class="btn btn-theme"})
+</div>
+<div class="line"></div>
+
+<section>
+  <div class="card">
+    <div class="card-body room-details">
+
+      <h3>@Model.RoomModel.Title (<small>@Model.BookingStatus</small>)</h3>
+
+      <div class="room-details-content p-2" style="width:100%">
+
+        <table class="table" style="width:100%">
+          <tr>
+            <th>Room Number </th>
+            <td>: @Model.RoomModel.RoomNo</td>
+            <th>Attendees </th>
+            <td>: @Model.TotalAttendees</td>
+          </tr>
+          <tr>
+            <th>Location </th>
+            <td>: @Model.RoomModel.Location</td>
+            <th>Reservation Date </th>
+            <td>: @Model.CheckInDate.ToString("D")</td>
+          </tr>
+          <tr>
+            <th>Floor </th>
+            <td>: @Model.RoomModel.Floor</td>
+            <th>Check in at </th>
+            <td>: @Model.CheckInTime.ToString("h:mm tt")</td>
+          </tr>
+          <tr>
+            <th>Building Name </th>
+            <td>: @Model.RoomModel.BuildingName</td>
+            <th>Check out at </th>
+            <td>: @Model.CheckOutTime.ToString("h:mm tt")</td>
+          </tr>
+          <tr>
+            <th>Price per hour</th>
+            <td>: $ @Model.RoomPrice</td>
+            <th>Room Amount</th>
+            <td>: $ @Model.RoomAmount</td>
+          </tr>
+          <tr>
+            <th>Room Image</th>
+            <td>
+              <a href="~/Uploads/RoomImages/@Model.RoomModel.RoomImageFileName" target="_blank" class="btn-link">Click here to view image</a>
+            </td>
+            <th>Total Amount <br />(incl optional service if aquired) </th>
+            <td>: $ @Model.GrossAmount</td>
+          </tr>
+        </table>
+
+      </div>
+      <div class="line"></div>
+      @if (Model.CategoryItemModels.Any())
+      {
+        <h3>Optional Services</h3>
+        <div class="room-details-content p-2" style="width:100%">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            @foreach (var resCatitem in Model.CategoryItemModels)
+            {
+              <tr>
+                <th>@resCatitem.CategoryModel.CategoryName</th>
+                <td>@resCatitem.ItemModel.ItemName</td>
+                <td>$ @resCatitem.ItemPrice</td>
+                <td>@resCatitem.Quantity</td>
+                <td>$ @resCatitem.ItemAmount</td>
+              </tr>
+            }
+          </table>
+        </div>
+      }
+
+
+    </div>
+  </div>
+</section>
+

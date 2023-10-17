@@ -1,0 +1,34 @@
+﻿@model BookMeetingRoom.Models.RescheduleModel
+@{
+  ViewBag.Title = "Reschedule";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">Re-schedule Booking </h4>
+  @Html.ActionLink("Back to booking list", "index", new { }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+
+<div class="card" style="width:30%;">
+  <div class="card-body">
+    <h4 class="text-center text-danger">@Model.AvailabilityMsg</h4>
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.BookingId)
+      <div class="form-group">
+        @Html.LabelFor(model => model.ReservationDate)
+        @Html.TextBoxFor(model => model.ReservationDate, new { @class = "form-control", type = "date" })
+      </div>
+      <div class="form-group">
+        @Html.LabelFor(model => model.CheckInTime)
+        @Html.TextBoxFor(model => model.CheckInTime, new { @class = "form-control", type = "time" })
+      </div>
+      <div class="form-group">
+        @Html.LabelFor(model => model.CheckOutTime)
+        @Html.TextBoxFor(model => model.CheckOutTime, new { @class = "form-control", type = "time" })
+      </div>
+      <button type="submit" class="btn btn-outline-info">Check Availability / Book</button>
+    }
+  </div>
+</div>
+

@@ -1,0 +1,62 @@
+﻿@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import 'https://fonts.googleapis.com/css2?family=Roboto&display=swap';
+* {
+ padding:0;
+ margin:0;
+}
+
+:root {
+ --theme: #2a0157;
+ --theme_lite: #4d02a1;
+}
+
+body {
+ height: 90vh;
+}
+
+p {
+ font-family: 'Roboto', sans-serif;
+ font-size: 0.9em;
+ font-weight: 400;
+ line-height: 1.7em;
+ color: #999;
+}
+
+.text-theme {
+ color: var(--theme_lite);
+}
+
+.field-validation-error {
+ color: red;
+}
+
+.input-validation-error, .input-validation-error :focus {
+ border-color: red;
+}
+
+.btn{
+ border-radius:0;
+}
+
+.btn-outline-theme {
+ background-color: var(--theme);
+ color: #fff;
+ font-weight: bold;
+ border-color: #fff;
+}
+
+ .btn-outline-theme:hover {
+  background-color: #fff;
+  color: var(--theme);
+  font-weight: bold;
+  border-color: var(--theme);
+ }
+
+.banner {
+ background-image: linear-gradient(rgba(64, 63, 63, 0.45), rgba(12, 12, 12, 0.45)), url(https://images.pexels.com/photos/236730/pexels-photo-236730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
+ min-height: 100%;
+}
+

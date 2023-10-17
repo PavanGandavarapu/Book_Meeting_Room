@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "NotFound";
+}
+
+<div class="text-danger text-center m-3">
+  @if (ViewBag.ErrorMsg != null)
+  {
+    <h4>@ViewBag.ErrorMsg</h4>
+  }
+  else
+  {
+    <h4>Sorry!, The resource you are looking is not found.</h4>
+  }
+
+</div>
+

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<BookMeetingRoom.Models.RoomModel>
+@{
+  ViewBag.Title = "Index";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">view all added rooms</h4>
+  @Html.ActionLink("+ Add Room", "AddRoom", new { }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+@Html.Raw(ViewBag.Alert)
+
+<div class="card">
+  <div class="card-body">
+    @if (Model.Any())
+    {
+      <section class="d-flex justify-content-between flex-wrap">
+
+        <table class="table table-bordered" id="roomTable">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Meeting Type</th>
+              <th>Room Title</th>
+              <th>Room Number</th>
+              <th>Floor</th>
+              <th>Building</th>
+              <th>Location</th>
+              <th>Price</th>
+              <th>Capacity</th>
+              <th style="width:15%">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var data in Model)
+            {
+              <tr>
+                <td>
+                  <a href="~/Uploads//RoomImages/@data.RoomImageFileName" target="_blank">
+                    <img src="~/Uploads//RoomImages/@data.RoomImageFileName" alt="" style="width:30px;height:30px">
+                  </a>
+                </td>
+                <td>@data.MeetingTypeModel.Purpose</td>
+                <td>@data.Title</td>
+                <td>@data.RoomNo</td>
+                <td>@data.Floor</td>
+                <td>@data.BuildingName</td>
+                <td>@data.Location</td>
+                <td>$ @data.Price</td>
+                <td>@data.Capacity</td>
+                <td>
+                  @Html.ActionLink("Edit", "EditRoom", new { roomId = data.RoomId }, new { @class = "btn btn-sm btn-outline-primary" })
+                  @Html.ActionLink("Delete", "DeleteRoom", new { roomId = data.RoomId }, new { @class = "btn btn-sm btn-outline-danger", onclick = "return confirm('Are you sure you wish to delete this meeting type?');" })
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </section>
+    }
+    else
+    {
+      <h3 class="text-center">
+        No rooms avaiable to list, please add a room
+      </h3>
+    }
+
+  </div>
+</div>
+
+@section scripts{
+  <script>
+    $(document).ready(function () {
+      $('#roomTable').dataTable({
+        "pageLength": 25
+      });
+    });
+  </script>
+}

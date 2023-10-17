@@ -1,0 +1,82 @@
+﻿@model BookMeetingRoom.Models.ViewModels.ReservationConfirmationViewModel
+@{
+  ViewBag.Title = "Room Details";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">Confirm your booking details</h4>
+</div>
+<div class="line"></div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>Attendees</th>
+          <th>ReservationDate</th>
+          <th>Time From - To</th>
+          <th>Room Details</th>
+          <th>Price per hour</th>
+          <th>Total hours</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>@Model.Attendees</td>
+          <td>@Model.ReservationDate.ToString("MM-dd-yyyy")</td>
+          <td>@Model.FromTime.ToString("h:mm: tt") To @Model.ToTime.ToString("h:mm: tt")</td>
+          <td>@Model.RoomTitle</td>
+          <td>$@Model.RoomPricePerHour</td>
+          <td>@Model.TotalHours</td>
+          <td>$@Model.RoomTotalAmount</td>
+        </tr>
+        @if (Model.ServiceCategories.Any())
+        {
+          <tr>
+            <th colspan="7" style="color:blueviolet">Additional Service</th>
+          </tr>
+
+          <tr>
+            <th></th>
+            <th></th>
+            <th>Category</th>
+            <th>Items</th>
+            <th>Quantity</th>
+            <th>Price (per Qty)</th>
+            <th>Amount</th>
+          </tr>
+
+          foreach (var category in Model.ServiceCategories)
+          {
+            <tr>
+              <td></td>
+              <td></td>
+              <td>@category.CategoryName</td>
+              @foreach (var item in category.ItemModels)
+              {
+                <td>@item.ItemName</td>
+                <td>@item.Quantity</td>
+                <td>$@item.Price</td>
+                <td>$@item.Amount</td>
+              }
+
+            </tr>
+          }
+        }
+
+
+
+        @* Total Amount Display *@
+        <tr>
+          <th colspan="5"></th>
+          <th>Total Amount</th>
+          <td>$@Model.GrossAmount</td>
+        </tr>
+      </table>
+      <div class="d-flex justify-content-end">
+        @Html.ActionLink("Reserve Meeting Room", "ReserveRoom", new { }, new { @class = "btn btn-success" })
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,113 @@
+[{
+  "_id": {
+    "$oid": "635268f21d9927f924ac1576"
+  },
+  "BookingId": {
+    "$oid": "635268f22019cfc89656ee98"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemId": {
+    "$oid": "634e5970d7509bc3d874678d"
+  },
+  "Quantity": 60,
+  "ItemPrice": 3,
+  "ItemAmount": 180
+},{
+  "_id": {
+    "$oid": "635288941d9927f924ac24ad"
+  },
+  "BookingId": {
+    "$oid": "63528894642c44d661a820a4"
+  },
+  "CategoryId": {
+    "$oid": "634e4cdc7867763de8250b45"
+  },
+  "ItemId": {
+    "$oid": "634e55a36c4f2c8d48edea96"
+  },
+  "Quantity": 60,
+  "ItemPrice": 2,
+  "ItemAmount": 120
+},{
+  "_id": {
+    "$oid": "635288941d9927f924ac24af"
+  },
+  "BookingId": {
+    "$oid": "63528894642c44d661a820a4"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemId": {
+    "$oid": "634e5970d7509bc3d874678d"
+  },
+  "Quantity": 60,
+  "ItemPrice": 3,
+  "ItemAmount": 180
+},{
+  "_id": {
+    "$oid": "635288941d9927f924ac24b1"
+  },
+  "BookingId": {
+    "$oid": "63528894642c44d661a820a4"
+  },
+  "CategoryId": {
+    "$oid": "634e4cf07867763de8250b47"
+  },
+  "ItemId": {
+    "$oid": "634e59a0d7509bc3d8746790"
+  },
+  "Quantity": 60,
+  "ItemPrice": 6,
+  "ItemAmount": 360
+},{
+  "_id": {
+    "$oid": "635a494c9c53d24e94db2933"
+  },
+  "BookingId": {
+    "$oid": "635a494c9c53d24e94db2932"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemId": {
+    "$oid": "634e5970d7509bc3d874678d"
+  },
+  "Quantity": 40,
+  "ItemPrice": 3,
+  "ItemAmount": 120
+},{
+  "_id": {
+    "$oid": "635a494c9c53d24e94db2934"
+  },
+  "BookingId": {
+    "$oid": "635a494c9c53d24e94db2932"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemId": {
+    "$oid": "634e59dcd7509bc3d8746791"
+  },
+  "Quantity": 40,
+  "ItemPrice": 4,
+  "ItemAmount": 160
+},{
+  "_id": {
+    "$oid": "6368da00404a0e4757e9bcc1"
+  },
+  "BookingId": {
+    "$oid": "6368da00404a0e4757e9bcc0"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemId": {
+    "$oid": "634e5970d7509bc3d874678d"
+  },
+  "Quantity": 10,
+  "ItemPrice": 3,
+  "ItemAmount": 30
+}]

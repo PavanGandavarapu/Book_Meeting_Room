@@ -1,0 +1,113 @@
+[{
+  "_id": {
+    "$oid": "634d1ceaf0619e9b2768f219"
+  },
+  "Title": "Premium Conference Room",
+  "RoomNo": "1011",
+  "Floor": "1st Floor",
+  "BuildingName": "Cognito",
+  "Location": "Andheri West",
+  "Price": 15,
+  "Capacity": 15,
+  "RoomImageFileName": "cdd95139-8470-4301-b921-3033e31442e3_meeting-10-seater.jpg",
+  "IsActive": true,
+  "MeetingType_Id": {
+    "$oid": "634bf94ea24fc593c83f9a07"
+  }
+},{
+  "_id": {
+    "$oid": "634d3e427e46534d79318f80"
+  },
+  "Title": "Counseling Room  ",
+  "RoomNo": "201",
+  "Floor": "2nd Floor",
+  "BuildingName": "Cognito",
+  "Location": "Andheri West",
+  "Price": 10,
+  "Capacity": 3,
+  "RoomImageFileName": "c8844a10-6896-40b4-af88-fb44c8f1397e_meeting-10-seater.jpg",
+  "IsActive": true,
+  "MeetingType_Id": {
+    "$oid": "6350651a44495289dd54d586"
+  }
+},{
+  "_id": {
+    "$oid": "63506caf4d11530001daefab"
+  },
+  "Title": "Budget Conference Room",
+  "RoomNo": "103",
+  "Floor": "1st Floor",
+  "BuildingName": "Ninaina",
+  "Location": "Portaz",
+  "Price": 20,
+  "Capacity": 15,
+  "RoomImageFileName": "1b7c50ef-0124-4307-b743-ec7c5aaa9aae_meeting-10-seater.jpg",
+  "IsActive": true,
+  "MeetingType_Id": {
+    "$oid": "634bf94ea24fc593c83f9a07"
+  }
+},{
+  "_id": {
+    "$oid": "635267ab2019cfc89656ee96"
+  },
+  "Title": "Budget Counselling",
+  "RoomNo": "104",
+  "Floor": "1st Floor",
+  "BuildingName": "Tropicana",
+  "Location": "Thane",
+  "Price": 10,
+  "Capacity": 4,
+  "RoomImageFileName": "8cbe48e7-c750-4a46-88e4-145b6ee9fbc8_meeting-10-seater.jpg",
+  "IsActive": true,
+  "MeetingType_Id": {
+    "$oid": "6350651a44495289dd54d586"
+  }
+},{
+  "_id": {
+    "$oid": "6352683c2019cfc89656ee97"
+  },
+  "Title": "Classing Training Space",
+  "RoomNo": "B21",
+  "Floor": "2nd Floor",
+  "BuildingName": "Tropicana",
+  "Location": "Thane",
+  "Price": 25,
+  "Capacity": 100,
+  "RoomImageFileName": "cef36e41-8bce-46bc-bac5-7b49c4cb9ca9_meeting-10-seater.jpg",
+  "IsActive": true,
+  "MeetingType_Id": {
+    "$oid": "634bf8c8793242f2c769b785"
+  }
+},{
+  "_id": {
+    "$oid": "635a2398df541a6f12c70a9e"
+  },
+  "Title": "Test training hall",
+  "RoomNo": "B22",
+  "Floor": "2nd Floor",
+  "BuildingName": "Pristo",
+  "Location": "Samraj",
+  "Price": 5,
+  "Capacity": 150,
+  "RoomImageFileName": "c236cfa8-d9f6-4743-9840-1ad7c073f610_15814.jpg",
+  "IsActive": false,
+  "MeetingType_Id": {
+    "$oid": "634bf8c8793242f2c769b785"
+  }
+},{
+  "_id": {
+    "$oid": "635a48d89c53d24e94db2931"
+  },
+  "Title": "Premium Training Halls",
+  "RoomNo": "F20",
+  "Floor": "2nd Floor",
+  "BuildingName": "Palazo",
+  "Location": "Thane",
+  "Price": 8,
+  "Capacity": 120,
+  "RoomImageFileName": "2186e16a-56dc-4dec-bcd6-265f44832ec8_training-hall.jpg",
+  "IsActive": true,
+  "MeetingType_Id": {
+    "$oid": "634bf8c8793242f2c769b785"
+  }
+}]

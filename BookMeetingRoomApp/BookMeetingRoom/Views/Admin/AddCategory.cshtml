@@ -1,0 +1,40 @@
+﻿@model BookMeetingRoom.Models.ServiceCategoryModel
+
+@{
+  ViewBag.Title = "Add Service Category";
+}
+
+@Html.Raw(ViewBag.Alert)
+
+<div class="d-flex flex-row align-items-center justify-content-end">
+  @Html.ActionLink("Back to list", "Category", new { }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title border-bottom text-center">Add Category</h5>
+    <p>
+      @using (Html.BeginForm())
+      {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.CategoryName)
+            @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CategoryName)
+          </div>
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Add Type</button>
+      }
+    </p>
+  </div>
+</div>
+
+@section scripts{
+  @Scripts.Render("~/bundles/jqueryval")
+}
+

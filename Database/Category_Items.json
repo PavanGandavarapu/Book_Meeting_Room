@@ -1,0 +1,101 @@
+[{
+  "_id": {
+    "$oid": "634e55a36c4f2c8d48edea96"
+  },
+  "CategoryId": {
+    "$oid": "634e4cdc7867763de8250b45"
+  },
+  "ItemName": "Breakfast - Item 1",
+  "Price": 2,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e55f6ca2dd5628264f417"
+  },
+  "CategoryId": {
+    "$oid": "634e4cdc7867763de8250b45"
+  },
+  "ItemName": "Breakfast - Item 2",
+  "Price": 2,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e5970d7509bc3d874678d"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemName": "Lunch - Item 1",
+  "Price": 3,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e5980d7509bc3d874678e"
+  },
+  "CategoryId": {
+    "$oid": "634e4cf07867763de8250b47"
+  },
+  "ItemName": "Tea",
+  "Price": 5,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e598ad7509bc3d874678f"
+  },
+  "CategoryId": {
+    "$oid": "634e4cf07867763de8250b47"
+  },
+  "ItemName": "Snacks",
+  "Price": 2,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e59a0d7509bc3d8746790"
+  },
+  "CategoryId": {
+    "$oid": "634e4cf07867763de8250b47"
+  },
+  "ItemName": "Tea & Snacks",
+  "Price": 6,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e59dcd7509bc3d8746791"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemName": "Lunch - Item 2",
+  "Price": 4,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "634e59efd7509bc3d8746792"
+  },
+  "CategoryId": {
+    "$oid": "634e4ce47867763de8250b46"
+  },
+  "ItemName": "Lunch - Item 3",
+  "Price": 0.3,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "6350539d7170ae52117361a7"
+  },
+  "CategoryId": {
+    "$oid": "634e4cf87867763de8250b48"
+  },
+  "ItemName": "Dinner Item 1",
+  "Price": 5,
+  "Status": true
+},{
+  "_id": {
+    "$oid": "635053a87170ae52117361a8"
+  },
+  "CategoryId": {
+    "$oid": "634e4cf87867763de8250b48"
+  },
+  "ItemName": "Dinner Item 2",
+  "Price": 2,
+  "Status": true
+}]

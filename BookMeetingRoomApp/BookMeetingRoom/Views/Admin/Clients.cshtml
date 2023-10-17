@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BookMeetingRoom.Models.ClientModel>
+@{
+  ViewBag.Title = "Clients List";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">view all registered clients</h4>
+</div>
+<div class="line"></div>
+
+@Html.Raw(ViewBag.Alert)
+
+<div class="card shadow p-2">
+  <div class="card-body">
+    <table class="table table-bordered" id="roomTable">
+      <thead>
+        <tr>
+          <th>Fullname</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Organaization</th>
+          <th style="width:20%">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var data in Model)
+        {
+          <tr>
+            <td>@data.FullName</td>
+            <td>@data.Email</td>
+            <td>@data.Phone</td>
+            <td>@data.Organization</td>
+            <td>
+              @Html.ActionLink("View Bookings","index","booking",new { @clientId = data.ClientId }, new {@class="btn btn-outline-info"})
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+@section scripts{
+  <script>
+    $(document).ready(function () {
+      $('#roomTable').dataTable({
+        "pageLength": 25
+      });
+    });
+  </script>
+}

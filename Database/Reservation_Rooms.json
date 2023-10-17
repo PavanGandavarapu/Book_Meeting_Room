@@ -1,0 +1,217 @@
+[{
+  "_id": {
+    "$oid": "635268f22019cfc89656ee98"
+  },
+  "ClientId": {
+    "$oid": "635034f4f076b28ba8656f3e"
+  },
+  "RoomId": {
+    "$oid": "6352683c2019cfc89656ee97"
+  },
+  "CheckInDate": {
+    "$date": {
+      "$numberLong": "1667433600000"
+    }
+  },
+  "CheckInTime": {
+    "$date": {
+      "$numberLong": "1666436400000"
+    }
+  },
+  "CheckOutTime": {
+    "$date": {
+      "$numberLong": "1666458000000"
+    }
+  },
+  "TotalAttendees": 60,
+  "RoomPrice": 25,
+  "RoomAmount": 150,
+  "GrossAmount": 330,
+  "BookedDate": {
+    "$date": {
+      "$numberLong": "1666345202431"
+    }
+  },
+  "BookingStatus": 2,
+  "OrderId": 1
+},{
+  "_id": {
+    "$oid": "63528894642c44d661a820a4"
+  },
+  "ClientId": {
+    "$oid": "635034f4f076b28ba8656f3e"
+  },
+  "RoomId": {
+    "$oid": "6352683c2019cfc89656ee97"
+  },
+  "CheckInDate": {
+    "$date": {
+      "$numberLong": "1668038400000"
+    }
+  },
+  "CheckInTime": {
+    "$date": {
+      "$numberLong": "1666868400000"
+    }
+  },
+  "CheckOutTime": {
+    "$date": {
+      "$numberLong": "1666890000000"
+    }
+  },
+  "TotalAttendees": 60,
+  "RoomPrice": 25,
+  "RoomAmount": 150,
+  "GrossAmount": 810,
+  "BookedDate": {
+    "$date": {
+      "$numberLong": "1666353300515"
+    }
+  },
+  "BookingStatus": 2,
+  "OrderId": 2
+},{
+  "_id": {
+    "$oid": "63529c8be71be83ef1557808"
+  },
+  "ClientId": {
+    "$oid": "635034f4f076b28ba8656f3e"
+  },
+  "RoomId": {
+    "$oid": "634d3e427e46534d79318f80"
+  },
+  "CheckInDate": {
+    "$date": {
+      "$numberLong": "1667433600000"
+    }
+  },
+  "CheckInTime": {
+    "$date": {
+      "$numberLong": "1667214000000"
+    }
+  },
+  "CheckOutTime": {
+    "$date": {
+      "$numberLong": "1667224800000"
+    }
+  },
+  "TotalAttendees": 3,
+  "RoomPrice": 10,
+  "RoomAmount": 30,
+  "GrossAmount": 30,
+  "BookedDate": {
+    "$date": {
+      "$numberLong": "1666358411645"
+    }
+  },
+  "BookingStatus": 1,
+  "OrderId": 3
+},{
+  "_id": {
+    "$oid": "635a494c9c53d24e94db2932"
+  },
+  "ClientId": {
+    "$oid": "635a46559c53d24e94db292f"
+  },
+  "RoomId": {
+    "$oid": "635a48d89c53d24e94db2931"
+  },
+  "CheckInDate": {
+    "$date": {
+      "$numberLong": "1668211200000"
+    }
+  },
+  "CheckInTime": {
+    "$date": {
+      "$numberLong": "1666866600000"
+    }
+  },
+  "CheckOutTime": {
+    "$date": {
+      "$numberLong": "1666893600000"
+    }
+  },
+  "TotalAttendees": 100,
+  "RoomPrice": 8,
+  "RoomAmount": 60,
+  "GrossAmount": 340,
+  "BookedDate": {
+    "$date": {
+      "$numberLong": "1666861388553"
+    }
+  },
+  "BookingStatus": 2,
+  "OrderId": 4
+},{
+  "_id": {
+    "$oid": "635fb47238274b72bbe378f9"
+  },
+  "ClientId": {
+    "$oid": "635034f4f076b28ba8656f3e"
+  },
+  "RoomId": {
+    "$oid": "6352683c2019cfc89656ee97"
+  },
+  "CheckInDate": {
+    "$date": {
+      "$numberLong": "1669852800000"
+    }
+  },
+  "CheckInTime": {
+    "$date": {
+      "$numberLong": "1667820600000"
+    }
+  },
+  "CheckOutTime": {
+    "$date": {
+      "$numberLong": "1667829600000"
+    }
+  },
+  "TotalAttendees": 50,
+  "RoomPrice": 25,
+  "RoomAmount": 62.5,
+  "GrossAmount": 62.5,
+  "BookedDate": {
+    "$date": {
+      "$numberLong": "1667216498666"
+    }
+  },
+  "BookingStatus": 1,
+  "OrderId": 5
+},{
+  "_id": {
+    "$oid": "6368da00404a0e4757e9bcc0"
+  },
+  "ClientId": {
+    "$oid": "635034f4f076b28ba8656f3e"
+  },
+  "RoomId": {
+    "$oid": "634d1ceaf0619e9b2768f219"
+  },
+  "CheckInDate": {
+    "$date": {
+      "$numberLong": "1670198400000"
+    }
+  },
+  "CheckInTime": {
+    "$date": {
+      "$numberLong": "1667820600000"
+    }
+  },
+  "CheckOutTime": {
+    "$date": {
+      "$numberLong": "1667833200000"
+    }
+  },
+  "TotalAttendees": 10,
+  "RoomPrice": 15,
+  "RoomAmount": 52.5,
+  "GrossAmount": 82.5,
+  "BookedDate": {
+    "$date": {
+      "$numberLong": "1667815936663"
+    }
+  },
+  "BookingStatus": 1,
+  "OrderId": 6
+}]

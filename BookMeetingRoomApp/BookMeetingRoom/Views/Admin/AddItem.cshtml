@@ -1,0 +1,45 @@
+﻿@model BookMeetingRoom.Models.ServiceItemModel
+@{
+  ViewBag.Title = "Add new item";
+}
+
+@Html.Raw(ViewBag.Alert)
+
+<div class="d-flex flex-row align-items-center justify-content-end">
+  @Html.ActionLink("Back to list", "CategoryItems", new { categoryId = Model.CategoryId }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title border-bottom text-center">Add Item to @Model.ServiceCategoryModel.CategoryName</h5>
+    <p>
+      @using (Html.BeginForm())
+      {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.CategoryId)
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.ItemName)
+            @Html.TextBoxFor(model => model.ItemName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ItemName)
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            @Html.LabelFor(model => model.Price)
+            @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Price)
+          </div>
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Add Item</button>
+      }
+    </p>
+  </div>
+</div>
+
+@section scripts{
+  @Scripts.Render("~/bundles/jqueryval")
+}

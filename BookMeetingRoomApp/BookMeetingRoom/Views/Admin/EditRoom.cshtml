@@ -1,0 +1,117 @@
+﻿@model BookMeetingRoom.Models.RoomModel
+@{
+  ViewBag.Title = "Update Rooms";
+}
+
+<div class="d-flex flex-row align-items-center justify-content-end">
+  @Html.ActionLink("Back to room list", "Room", new { }, new { @class = "btn btn-theme" })
+</div>
+<div class="line"></div>
+@Html.Raw(ViewBag.Alert)
+<div class="container-md">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title text-center text-theme font-weight-bold"> Add New Room </h5>
+      <div class="line"></div>
+      <p>
+        @using (Html.BeginForm("EditRoom", "Admin", FormMethod.Post, new
+        { enctype = "multipart/form-data" }))
+        {
+          @Html.AntiForgeryToken()
+          @Html.HiddenFor(model => model.RoomId)
+          @Html.HiddenFor(model => model.RoomImageFileName)
+          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.Title)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.Title)
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.RoomNo)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.RoomNo, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.RoomNo)
+            </div>
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.RoomImage)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.RoomImage, new { @class = "form-control form-control-file", type = "file" })
+
+              @if (!string.IsNullOrEmpty(Model.RoomImageFileName))
+              {
+                <small id="emailHelp" class="form-text text-link">
+                  <a href="~/Uploads//RoomImages/@Model.RoomImageFileName" target="_blank">Click here to view room image</a>
+                </small>
+              }
+
+              @Html.ValidationMessageFor(model => model.RoomImage)
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.Floor)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.Floor, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.Floor)
+            </div>
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.MeetingType_Id)
+              <span class="text-danger">*</span>
+              @Html.DropDownListFor(model => model.MeetingType_Id, (IEnumerable<SelectListItem>)ViewBag.MeetingTypes, "-- Select Meeting Type --", new { @class = "custom-select" })
+              @Html.ValidationMessageFor(model => model.MeetingType_Id)
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.Price)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.Price, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.Price)
+            </div>
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.Capacity)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.Capacity, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.Capacity)
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.BuildingName)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.BuildingName, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.BuildingName)
+            </div>
+            <div class="form-group col-md-6">
+              @Html.LabelFor(model => model.Location)
+              <span class="text-danger">*</span>
+              @Html.TextBoxFor(model => model.Location, new { @class = "form-control" })
+              @Html.ValidationMessageFor(model => model.Location)
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <button type="submit" class="btn btn-outline-primary form-control">UPDATE ROOM</button>
+            </div>
+          </div>
+        }
+      </p>
+    </div>
+  </div>
+</div>
+
+@section scripts{
+  @Scripts.Render("~/bundles/jqueryval")
+}
+
+

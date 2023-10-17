@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "634ec9cd460755435fba1238"
+  },
+  "ClientId": "634ec9cd460755435fba1237",
+  "UserName": "sai@gmail.com",
+  "Password": "1234",
+  "Role": "Client",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "635034f4f076b28ba8656f3f"
+  },
+  "ClientId": {
+    "$oid": "635034f4f076b28ba8656f3e"
+  },
+  "UserName": "siva@gmail.com",
+  "Password": "321",
+  "Role": "Client",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "63522bec510946845755ac9e"
+  },
+  "ClientId": {
+    "$oid": "63522bec510946845755ac9d"
+  },
+  "UserName": "varun@gmail.com",
+  "Password": "1234",
+  "Role": "Client",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "635249e5ff7a40e155585054"
+  },
+  "ClientId": {
+    "$oid": "635249e5ff7a40e155585053"
+  },
+  "UserName": "abi@gmail.com",
+  "Password": "123",
+  "Role": "Client",
+  "Status": true
+},{
+  "_id": {
+    "$oid": "635a46559c53d24e94db2930"
+  },
+  "ClientId": {
+    "$oid": "635a46559c53d24e94db292f"
+  },
+  "UserName": "nitin@gmail.com",
+  "Password": "123",
+  "Role": "Client",
+  "Status": true
+}]

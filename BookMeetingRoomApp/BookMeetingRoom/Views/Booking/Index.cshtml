@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BookMeetingRoom.Models.ReservationModel>
+@using CS = BookMeetingRoom.Common.CommonServices;
+@using BookMeetingRoom.Enums;
+
+@{
+  ViewBag.Title = "Index"; int sno = 0;
+}
+@Html.Raw(ViewBag.Alert)
+<div class="d-flex flex-row align-items-center justify-content-between">
+  <h4 class="page-title">view all reservations</h4>
+</div>
+<div class="line"></div>
+
+<section class="container">
+
+
+  <div class="table-responsive">
+    <table class="table table-bordered" id="reservationTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Booking Id</th>
+          <th style="width:30%;">Room Title</th>
+          <th style="width:30%;">Reserved on  (dd-mm-yyyy)</th>
+          <th>Total Attendees</th>
+          <th>Bill Amount</th>
+          <th>Status</th>
+          <th style="width:20%;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var item in Model)
+        {
+          sno = ++sno;
+          <tr>
+            <th class="">@sno</th>
+            <td>
+              @Html.ActionLink(@item.BookingId, "details", new { bookingId = item.BookingId }, new { @class = "page-link" })
+            </td>
+            <td>@item.RoomModel.Title</td>
+            <td>
+              @item.CheckInDate.ToString("MM/dd/yyyy") <br />(@item.CheckInTime.ToString("hh:mm tt") - @item.CheckOutTime.ToString("hh:mm tt"))
+            </td>
+            <td>@item.TotalAttendees</td>
+            <td>$ @item.GrossAmount</td>
+            <td>@item.BookingStatus</td>
+            <td>
+
+              @if ((bool)Session[CS.IsAdmin] && item.BookingStatus == BookingStatus.Pending)
+              {
+                @Html.ActionLink("Approve", "approve", new { bookingId = item.BookingId }, new { @class = "btn btn-sm btn-success" });
+              }
+
+              @if (item.BookingStatus != BookingStatus.Cancelled)
+              {
+                @Html.ActionLink("Cancel", "Cancel", new { bookingId = item.BookingId }, new { @class = "mt-1 btn btn-sm btn-danger" })
+              }
+
+              @if (item.BookingStatus != BookingStatus.Pending && item.BookingStatus != BookingStatus.Approved)
+              {
+                @Html.ActionLink("Re-schedule", "Reschedule", new { bookingId = item.BookingId }, new { @class = "mt-1 btn btn-sm btn-info" });
+              }
+
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+
+</section>
+
+@section scripts{
+  <script>
+    $(document).ready(function () {
+      $('#reservationTable').dataTable({
+        "pageLength": 25
+      });
+    });
+  </script>
+}
+
